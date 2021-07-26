@@ -1,0 +1,16 @@
+`timescale 1ns / 1ps
+
+
+module HA(Sum, Carry, P, Q);
+
+output Sum, Carry;
+input P, Q;
+
+
+
+and #4(Carry, P, Q);
+xor #5(Sum, P, Q);
+
+
+
+endmodule

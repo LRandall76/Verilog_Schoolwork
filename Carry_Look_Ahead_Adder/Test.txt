@@ -1,0 +1,26 @@
+`timescale 1ns / 1ps
+
+module test;
+wire Co;
+wire [3:0]S;
+reg [3:0] A;
+reg [3:0] B;
+reg Ci;
+
+CLA4 dut (.Co(Co),.S(S),.A(A),.B(B),.Ci(Ci));
+
+
+	initial begin
+	#0    A=4'b1010;
+	#0    B=4'b0010;
+	#0    Ci=1'b0;
+	#40   A=4'b1010;
+	#40   B=4'b0111;
+	#80   A=4'b1111;
+	#80   B=4'b1111;
+	
+	
+	#160 $finish;
+	end
+
+endmodule

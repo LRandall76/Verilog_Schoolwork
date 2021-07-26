@@ -1,0 +1,17 @@
+`timescale 1ns / 1ps
+
+module FA(Fsum, Cout,U,V,Cin);
+
+output Cout;
+output Fsum;
+input  Cin;
+input  U;
+input  V;
+wire X,Y,Z;
+
+HA a(X,Y,U,V);
+HA b(Fsum,Z,Cin,X);
+
+or #1 (Cout,Z,Y);
+
+endmodule
